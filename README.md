@@ -1,13 +1,7 @@
 # dotfiles
-<style> 
-  .img-container {
-      text-align: center;
-      display:block
-    }  
-<style>
 
 <span class="img-container">
-  <img src="images/readme-screenshot.png" text-align:center>
+  <img src="images/readme-screenshot.png" text-align:center; display:block;>
 </span>
 
 <!-- ![](images/readme-screenshot.png) -->
