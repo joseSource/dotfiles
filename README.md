@@ -1,6 +1,6 @@
 # dotfiles
   <!--table-->
-  <table>
+  <table align='center'>
     <tr>
       <td id="coding1" align='center'><img src="images/readme-screenshot.png"></img></td>
     </tr>
