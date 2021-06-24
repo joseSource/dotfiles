@@ -1,12 +1,3 @@
---[[
-O is the global options object
-
-Formatters and linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
-
 -- general
 O.auto_complete = true
 O.colorscheme = 'gruvbox-material'
@@ -68,3 +59,4 @@ O.go.autoformat = true
 
 -- Turn off relative_numbers
 -- O.relative_number = false
+

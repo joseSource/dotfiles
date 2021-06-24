@@ -41,22 +41,24 @@ module-margin-right = 2
 font-0 = = SF Pro Display:size=9;0
 font-1 = 3270Medium Nerd Font Mono:size=11;0
 font-2 = 3270Medium Nerd Font Mono:size=11;0
-font-3 = 3270Medium Nerd Font Mono:size=11;0
+font-3 = Weather Icons:size=12;0
 font-4 = 3270Medium Nerd Font Mono:size=11;0
 font-5 = 3270Medium Nerd Font Mono:size=11;0
 
 
-modules-left = bspwm xwindow   
+modules-left = bspwm xwindow    
 modules-center =  spotify  
-modules-right =  clock date battery 
- 
-tray-position =  
-tray-padding = 0
-
-tray-background = ${colors.background}
+modules-right =   battery clock date   
 
 tray-detached = false
-
+tray-position = right
+tray-offset-x = 0
+tray-offset-y = 0
+tray-maxsize = 30
+tray-padding = 0
+tray-transparent = false
+tray-scale = 1.0
+ 
 wm-restack = bspwm
 override-redirect = false
 
@@ -354,24 +356,24 @@ time-format = %H:%M
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-label-discharging = %percentage%% (%time%)
+label-discharging = %percentage%%
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " " 
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+animation-charging-0 = 
+animation-charging-1 =  
+animation-charging-2 =  
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-framerate = 750
 
 ; Default: 5

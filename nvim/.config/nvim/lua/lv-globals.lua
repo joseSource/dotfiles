@@ -5,7 +5,7 @@ CACHE_PATH = vim.fn.stdpath('cache')
 O = {
     auto_close_tree = 0,
     auto_complete = true,
-    colorscheme = 'lunar',
+    colorscheme = 'gruvbox-material',
     hidden_files = true,
     wrap_lines = false,
     number = true,
@@ -73,16 +73,18 @@ O = {
     -- css = {formatter = '', autoformat = false, virtual_text = true},
     -- json = {formatter = '', autoformat = false, virtual_text = true}
 
-	dashboard = {
-		custom_header = {
-'                 _..._                                                                           ',
-'               .\'   (_`.    _                         __     ___           ',
-'              :  .      :  | |   _   _ _ __   __ _ _ _\\ \\   / (_)_ __ ___  ',
-'              :)    ()  :  | |  | | | | \'_ \\ / _` | \'__\\ \\ / /| | \'_ ` _ \\ ',
-'              `.   .   .\'  | |__| |_| | | | | (_| | |   \\ V / | | | | | | |',
-'                `-...-\'    |_____\\__,_|_| |_|\\__,_|_|    \\_/  |_|_| |_| |_|',
-		},
-		footer= {'chrisatmachine.com'}
-	}
-}
-
+ 	dashboard = {
+ 		custom_header = {
+        '',
+        '',
+        '',
+        '',
+        '', 
+        '',
+        '',
+        '' 
+ 		},
+ 		footer= {''}
+ 	}
+ }
+ 

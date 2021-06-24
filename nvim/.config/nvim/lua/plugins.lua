@@ -44,6 +44,7 @@ return require("packer").startup(function(use)
     use {"nvim-telescope/telescope.nvim", opt = true}
     use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
     use {"nvim-telescope/telescope-project.nvim", opt = true}
+    use {"easymotion/vim-easymotion"}
 
     -- Debugging
     use {"mfussenegger/nvim-dap", opt = true}
@@ -61,6 +62,8 @@ return require("packer").startup(function(use)
     -- Explorer
     use {"kyazdani42/nvim-tree.lua", opt = true}
     use {"ahmedkhalf/lsp-rooter.nvim", opt = true} -- with this nvim-tree will follow you
+    use {"preservim/nerdtree"}
+    use {"Xuyuanp/nerdtree-git-plugin"}
 
     -- TODO remove when open on dir is supported by nvimtree
     use "kevinhwang91/rnvimr"
@@ -72,6 +75,7 @@ return require("packer").startup(function(use)
     use {"ChristianChiarulli/dashboard-nvim", opt = true}
     use {"windwp/nvim-autopairs", opt = true}
     use {"kevinhwang91/nvim-bqf", opt = true}
+    use {"mhinz/vim-startify", opt = true}
 
     -- Comments
     use {"terrortylor/nvim-comment", opt = true}
@@ -90,13 +94,20 @@ return require("packer").startup(function(use)
     use {"glepnir/galaxyline.nvim", opt = true}
     use {"romgrk/barbar.nvim", opt = true}
 
+    -- git
+    use {"tpope/vim-fugitive"}
+
     -- Zen Mode
     use {"Pocco81/TrueZen.nvim", opt = true}
 
 		-- Sane gx for netrw_gx bug
     use {"felipec/vim-sanegx"}
 
+    -- vim-startify
+
+
     require_plugin("nvim-lspconfig")
+    require_plugin("tpope/vim-fugitive")
     require_plugin("lspsaga.nvim")
     require_plugin("nvim-lspinstall")
     require_plugin('trouble.nvim')
@@ -126,6 +137,10 @@ return require("packer").startup(function(use)
     require_plugin('lsp-rooter.nvim')
     require_plugin("TrueZen.nvim")
     require_plugin("nvim-ts-context-commentstring")
+    require_plugin("preservim/nerdtree")
+    require_plugin("Xuyuanp/nerdtree-git-plugin")
+    require_plugin("easymotion/vim-easymotion")
+    require_plugin("mhinz/vim-startify")
 
     -- Extras
     if O.extras then
@@ -151,10 +166,11 @@ return require("packer").startup(function(use)
         require_plugin('symbols-outline.nvim')
         use {'nvim-treesitter/playground', opt = true}
         require_plugin('playground')
+
         -- folke/todo-comments.nvim
         -- gennaro-tedesco/nvim-jqx
         -- TimUntersberger/neogit
-        -- folke/lsp-colors.nvim
+        -- 
         -- simrat39/symbols-outline.nvim
 
         -- Git

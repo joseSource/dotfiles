@@ -159,6 +159,14 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/jose/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim"
   },
+  nerdtree = {
+    loaded = true,
+    path = "/home/jose/.local/share/nvim/site/pack/packer/start/nerdtree"
+  },
+  ["nerdtree-git-plugin"] = {
+    loaded = true,
+    path = "/home/jose/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin"
+  },
   ["numb.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -287,6 +295,14 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/jose/.local/share/nvim/site/pack/packer/opt/trouble.nvim"
   },
+  ["vim-easymotion"] = {
+    loaded = true,
+    path = "/home/jose/.local/share/nvim/site/pack/packer/start/vim-easymotion"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/jose/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
   ["vim-matchup"] = {
     after_files = { "/home/jose/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
     loaded = false,
@@ -296,6 +312,11 @@ _G.packer_plugins = {
   ["vim-sanegx"] = {
     loaded = true,
     path = "/home/jose/.local/share/nvim/site/pack/packer/start/vim-sanegx"
+  },
+  ["vim-startify"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/jose/.local/share/nvim/site/pack/packer/opt/vim-startify"
   },
   ["vim-vsnip"] = {
     loaded = false,
