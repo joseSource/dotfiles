@@ -1,10 +1,10 @@
 vim.api.nvim_set_keymap('n', '-', ':RnvimrToggle<CR>', {noremap = true, silent = true})
 
 -- better window movement
--- vim.api.nvim_set_keymap('n', '<leader>h', 'wincmd h', {silent = true})
--- vim.api.nvim_set_keymap('n', '<leader>j', 'wincmd j', {silent = true})
--- vim.api.nvim_set_keymap('n', '<leader>k', 'wincmd k', {silent = true})
--- vim.api.nvim_set_keymap('n', '<leader>e', 'wincmd l', {silent = true})
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {silent = true})
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {silent = true})
 
 -- TODO fix this
 -- Terminal window navigation
@@ -69,5 +69,3 @@ vim.cmd('vnoremap P "0P')
 vim.api.nvim_set_keymap('', '<C-q>', ':call QuickFixToggle()<CR>', {noremap = true, silent = true})
 vim.cmd('source ~/.config/nvim/vimcmd/maps.vim')
 vim.cmd('source ~/.config/nvim/vimcmd/default.vim')
---vim.cmd('source ~/.config/nvim/vimcmd/start-screen.vim.vim')
-
