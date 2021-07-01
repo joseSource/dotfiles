@@ -19,6 +19,7 @@ set mouse=a
 set numberwidth=1
 set clipboard=unnamed
 set showcmd
+set bg=dark
 set ruler
 set cursorline
 set encoding=utf-8

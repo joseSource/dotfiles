@@ -19,6 +19,7 @@ return require("packer").startup(function(use)
     use {"neovim/nvim-lspconfig"}
     use {"glepnir/lspsaga.nvim", event = "BufRead"}
     use {"kabouzeid/nvim-lspinstall", event = "BufRead"}
+    use{"StanAngeloff/php.vim"}
 
     -- Telescope
     use {"nvim-lua/popup.nvim"}
@@ -60,7 +61,7 @@ return require("packer").startup(function(use)
     }
 
     -- whichkey
-    use {"folke/which-key.nvim"}
+     use {"folke/which-key.nvim"}
 
     -- Autopairs
     use {"windwp/nvim-autopairs"}
@@ -78,6 +79,7 @@ return require("packer").startup(function(use)
     use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
     use {"morhetz/gruvbox"}
     use {"sainnhe/gruvbox-material"}
+    use {"lifepillar/vim-gruvbox8"}
 
     -- Icons
     use {"kyazdani42/nvim-web-devicons"}

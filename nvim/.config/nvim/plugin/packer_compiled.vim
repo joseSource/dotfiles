@@ -73,7 +73,7 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["barbar.nvim"] = {
-    config = { "\27LJ\2\nä\2\0\0\6\0\r\0\0256\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0'\4\b\0005\5\t\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\n\0'\4\v\0005\5\f\0B\0\5\1K\0\1\0\1\0\2\vsilent\2\fnoremap\2\21:BufferClose<CR>\n<S-x>\1\0\2\vsilent\2\fnoremap\2\24:BufferPrevious<CR>\f<S-TAB>\1\0\2\vsilent\2\fnoremap\2\20:BufferNext<CR>\n<TAB>\6n\20nvim_set_keymap\bapi\bvim\0" },
+    config = { "\27LJ\2\nä\2\0\0\6\0\r\0\0256\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0'\4\b\0005\5\t\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\n\0'\4\v\0005\5\f\0B\0\5\1K\0\1\0\1\0\2\fnoremap\2\vsilent\2\21:BufferClose<CR>\n<S-x>\1\0\2\fnoremap\2\vsilent\2\24:BufferPrevious<CR>\f<S-TAB>\1\0\2\fnoremap\2\vsilent\2\20:BufferNext<CR>\n<TAB>\6n\20nvim_set_keymap\bapi\bvim\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jose/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
@@ -163,6 +163,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jose/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
+  ["php.vim"] = {
+    loaded = true,
+    path = "/home/jose/.local/share/nvim/site/pack/packer/start/php.vim"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/jose/.local/share/nvim/site/pack/packer/start/plenary.nvim"
@@ -174,6 +178,10 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/jose/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["vim-gruvbox8"] = {
+    loaded = true,
+    path = "/home/jose/.local/share/nvim/site/pack/packer/start/vim-gruvbox8"
   },
   ["vim-vsnip"] = {
     loaded = false,
@@ -201,8 +209,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-lspinstall', 'gitsigns.nvim', 'barbar.nvim', 'lspsaga.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-compe', 'vim-vsnip', 'friendly-snippets'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'gitsigns.nvim', 'lspsaga.nvim', 'nvim-lspinstall', 'barbar.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-compe', 'friendly-snippets', 'vim-vsnip'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

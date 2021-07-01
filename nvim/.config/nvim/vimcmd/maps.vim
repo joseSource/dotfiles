@@ -15,7 +15,6 @@ nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
-
 " easymotion
 nmap <leader>b <Plug>(easymotion-s2)
 nmap <leader>ss <Plug>(easymotion-t2)
@@ -82,6 +81,17 @@ nnoremap <leader>vll :call LspLocationList()<CR>nnoremap <Leader>T :TestFile<CR>
 
 " run things
 nnoremap <Leader>TT :TestSuite<CR>
+
+"wich keya add"
+nmap <leader>. :lua require'lv-nvimtree'.toggle_tree()<CR>
+nmap <leader>f :Telescope find_files<CR>
+nmap <leader>; :CommentToggle<CR>
+vnoremap <leader>; :CommentToggle<CR>
+nmap <leader>x :BufferClose<CR>
+nmap <leader>sc :Telescope colorscheme<CR>
+nmap <leader>gs :Telescope git_status<CR>
+
+
 
 " auto-format
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
