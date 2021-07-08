@@ -30,9 +30,9 @@ highlight = ${xrdb:color15:#ffff}
 
 [bar/base]
 enable-ipc = true
-font-0=Mononoki:pixelsize=9;2
-font-1=Mononoki:style=Solid:pixelsize=8;2
-font-2=Mononoki:style=Regular:size=10;3
+font-0=Hack:pixelsize=8;2
+font-1=Hack:style=Solid:pixelsize=8;2
+font-2=Hack:style=Regular:size=10;3
 
 padding = 2
 border-size = 0
@@ -102,6 +102,7 @@ scroll-down = bspc desktop -f prev
 type = internal/xwindow
 label = %title:0:33:...%
 label-margin = 2
+label-empty = Desktop
 
 [module/bspwm]
 type = internal/bspwm

@@ -30,9 +30,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'kabouzeid/nvim-lspinstall'
 	Plug 'hrsh7th/nvim-compe'
 	Plug 'jiangmiao/auto-pairs'
-  Plug 'hrsh7th/vim-vsnip'
+    Plug 'hrsh7th/vim-vsnip'
 	Plug 'glepnir/lspsaga.nvim'
-  Plug 'hrsh7th/vim-vsnip-integ'
+    Plug 'hrsh7th/vim-vsnip-integ'
 	Plug 'sbdchd/neoformat'
 
 call plug#end()
