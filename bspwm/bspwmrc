@@ -46,7 +46,7 @@ bspc config pointer_action3 resize_corner
 #---wallpaper and other things----
 
 # Set wallpaper
-feh --bg-scale ~/Pictures/plant.jpeg
+feh --bg-scale ~/Pictures/wall-selection/city-anime.png
 # Reload .Xresources
 xrdb -load ~/.Xresources
 # cursor 

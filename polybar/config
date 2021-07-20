@@ -72,7 +72,7 @@ offset-x = 37.5%
 ; modules-left = previous playpause next 
 ; modules-center = spotify
 ; Mpd
-modules-center = xwindow
+modules-center = xwindow 
 
 [bar/tray]
 inherit = bar/base
