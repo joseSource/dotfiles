@@ -9,10 +9,10 @@ let mapleader = " "
 " easymotion
 nmap <leader>b <Plug>(easymotion-s2)
 nmap <leader>ss <Plug>(easymotion-t2)
-nmap <leader>t <Plug>(easymotion-overwin-w)
+nmap <leader>o <Plug>(easymotion-overwin-w)
 
 "nerdtree
-nmap <leader>ne :NERDTreeToggle<CR>
+nmap <leader>ne :NvimTreeToggle<CR>
 nmap <leader>nt :NERDTreeFind<CR>
 vmap <leader>; <plug>NERDCommenterToggle
 nmap <leader>; <plug>NERDCommenterToggle
@@ -20,17 +20,31 @@ nmap <leader>; <plug>NERDCommenterToggle
 " greates remap ever 
 vnoremap <leader>p "_dP
 
+"plugins update
+nmap <leader>pi :PlugInstall<CR>	
 "nvim 
 nmap <leader>w :w!<CR> 
-nmap <leader>q :q<CR> 
-" nmap <leader>x :wq<CR>
+nmap <leader>z :bdelete<CR> 
+nmap <leader>q :q<CR>
 nmap <leader>h <C-h><CR>
 nmap <leader>e <C-l><CR>
 
-nnoremap <leader>fs <cmd>Telescope find_files<cr>
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+nnoremap <leader>sf <cmd>Telescope find_files<cr>
+nnoremap <leader>sr <cmd>Telescope oldfiles<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>sc <cmd>Telescope colorscheme<cr>
 "Esc on map
 ":imap ii <Esc>
 
@@ -60,7 +74,8 @@ nmap <leader>ra :RnvimrToggle<CR>
 
 " tabs
 nmap <leader>a :tabprevious<CR>
-
+nmap <silent><Tab> :bnext<CR>
+nmap <silent><S-Tab> :bprevious<CR>
 
 " run things
 nnoremap <Leader>TT :TestSuite<CR>
@@ -119,3 +134,37 @@ let g:vsnip_filetypes.typescriptreact = ['typescript']
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" NOTE: You can use other key to expand snippet.
+
+" Expand
+imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+
+" Expand or jump
+imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+
+" Jump forward or backward
+imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+
+" Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
+" See https://github.com/hrsh7th/vim-vsnip/pull/50
+nmap        s   <Plug>(vsnip-select-text)
+xmap        s   <Plug>(vsnip-select-text)
+nmap        S   <Plug>(vsnip-cut-text)
+xmap        S   <Plug>(vsnip-cut-text)
+
+" If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
+let g:vsnip_filetypes = {}
+let g:vsnip_filetypes.javascriptreact = ['javascript']
+let g:vsnip_filetypes.typescriptreact = ['typescript']
