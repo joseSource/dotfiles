@@ -54,12 +54,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'hrsh7th/vim-vsnip-integ'
 	Plug 'golang/vscode-go'
 	Plug 'rafamadriz/friendly-snippets'
- 	Plug 'honza/vim-snippets'
+ 	"Plug 'honza/vim-snippets'
   "Plug '9mm/vim-closer'
 
 	Plug 'cstrap/python-snippets'
 	"Plug 'xabikos/vscode-javascript'
-	Plug 'joshnh/HTML-Snippets'
+	"Plug 'joshnh/HTML-Snippets'
 	"Plug 'SirVer/ultisnips'
 
 	call plug#end()
