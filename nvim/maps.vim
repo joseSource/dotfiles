@@ -6,28 +6,42 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 let mapleader = " "
 
+
+"comment highlight
+
+nmap <leader>c <Plug>(InYoFace_Toggle)
+
+"useful things
+vnoremap <leader>p "_dP
+nnoremap Y y$
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+inoremap , ,<C-g>u
+
+
 " easymotion
-nmap <leader>b <Plug>(easymotion-s2)
-nmap <leader>ss <Plug>(easymotion-t2)
-nmap <leader>o <Plug>(easymotion-overwin-w)
+nnoremap <leader>b <Plug>(easymotion-s2)
+nnoremap <leader>ss <Plug>(easymotion-t2)
+nnoremap <leader>o <Plug>(easymotion-overwin-w)
 
 "nerdtree
-nmap <leader>ne :NvimTreeToggle<CR>
-nmap <leader>nt :NERDTreeFind<CR>
-vmap <leader>; <plug>NERDCommenterToggle
-nmap <leader>; <plug>NERDCommenterToggle
-
-" greates remap ever 
-vnoremap <leader>p "_dP
+nnoremap <leader>ne :NvimTreeToggle<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
+vnoremap <leader>; :Commentary<CR>
+nnoremap <leader>; :Commentary<CR>
 
 "plugins update
-nmap <leader>pi :PlugInstall<CR>	
+nnoremap <leader>pi :PlugInstall<CR>	
+
 "nvim 
-nmap <leader>w :w!<CR> 
-nmap <leader>z :bdelete<CR> 
-nmap <leader>q :q<CR>
-nmap <leader>h <C-h><CR>
-nmap <leader>e <C-l><CR>
+nnoremap <leader>w :w!<CR> 
+nnoremap <leader>z :bdelete<CR> 
+nnoremap <leader>q :q<CR>
+nnoremap <leader>h <C-h><CR>
+nnoremap <leader>e <C-l><CR>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -45,6 +59,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>sc <cmd>Telescope colorscheme<cr>
+
 "Esc on map
 ":imap ii <Esc>
 
@@ -64,13 +79,13 @@ nnoremap <leader>gh :diffget //2<CR>
 nnoremap <leader>ge :diffget //3<CR>
 
 "jump lines
-nmap <leader>f 0
+nnoremap <leader>f 0
 
 "select the complete line
-nmap <leader>v V
+nnoremap <leader>v V
 
 " ranger 
-nmap <leader>ra :RnvimrToggle<CR>
+"nnoremap <leader>ra :RnvimrToggle<CR>
 
 " tabs
 nmap <leader>a :tabprevious<CR>
@@ -80,7 +95,6 @@ nmap <silent><S-Tab> :bprevious<CR>
 " run things
 nnoremap <Leader>TT :TestSuite<CR>
 
-nmap <leader>f :Telescope find_files<CR>
 
  "go to"
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>

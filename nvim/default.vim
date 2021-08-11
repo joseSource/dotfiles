@@ -1,26 +1,24 @@
 " Syntax theme "{{{
 " ---------------------------------------------------------------------
-let g:gruvbox_termcolors = 16 
-		set background=dark
+" let g:gruvbox_termcolors = 16 
+		" set background=dark
 colorscheme gruvbox-material
+" colorscheme tokyonight
+" colorscheme NeoSolarized
 
-"hi Normal ctermbg=236
 
-"}}}
+" hi Normal ctermbg=236
+
+
+
+if executable('rg')
+	let g:rg_derive_root='true'
+endif
 
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 	match ExtraWhitespace /\s\+$\|\t/
 
- " Relative numbering
-  function! NumberToggle()
-    if(&relativenumber == 1)
-      set nornu
-      set number
-    else
-      set rnu
-    endif
-  endfunc
 
 "let things
 let g:airline#extensions#lsp#enabled = 1
@@ -41,41 +39,22 @@ let g:diagnostic_virtual_text_prexfix = ''
 let g:diagnostic_enable_text_prexfix = 1
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
-"airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='gruvbox8'
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'jsformatter'
-
-" Lightlane
-"
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ 'tabline': {
-      \   'left': [ ['buffers'] ]
-      \ },
-      \ 'component_expand': {
-      \   'buffers': 'lightline#bufferline#buffers'
-      \ },
-      \ 'component_type': {
-      \   'buffers': 'tabsel'
-      \ },
-      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
-      \ }
+" set things
 
 syntax on
 set t_Co=256
 set wildignore+=**/.git/*
 set completeopt=menuone,noselect
+set nohlsearch
+set updatetime=50
 set exrc
-set path+=**
 set nobackup
 set nowritebackup
 set undofile
 set hidden
+set noerrorbells
 set clipboard=unnamedplus
+set termguicolors 
 set number
 set mouse=a
 set numberwidth=1
@@ -89,7 +68,6 @@ set sw=2
 set relativenumber
 set laststatus=2
 set noshowmode
-set hlsearch                    
 set incsearch                  
 set ignorecase                 
 set smartcase                   
@@ -97,13 +75,12 @@ set smartcase
 " Fundamentals "{{{
 " ---------------------------------------------------------------------
 
-set ignorecase
 " Be smart when using tabs ;)
 set smarttab
 " indents
 filetype plugin indent on
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4 softtabstop=4
 set ai "Auto indent
 set si "Smart indent
 set nowrap "No Wrap lines
@@ -115,10 +92,6 @@ set formatoptions+=r
 
 "
 set cursorline
-
-highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
-
-highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
 
 augroup BgHighlight
   autocmd!
@@ -164,7 +137,7 @@ let g:prettier#autoformat = 0
 "----------------------------------------------------------------------------------------------------------------------------------
 "seting up lsp 
 
-lua require'lspconfig'.pyls.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.pylsp.setup{on_attach=require'completion'.on_attach}
 
 lua << EOF
 
@@ -216,6 +189,8 @@ require'lspconfig'.sumneko_lua.setup {
 require'lspconfig'.sumneko_lua.setup{}
 
 require'lspconfig'.pyright.setup{}
+
+require'lspconfig'.pylsp.setup{on_attach=require'completion'.on_attach}
 
 require'lspconfig'.vimls.setup{}
 
