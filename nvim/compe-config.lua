@@ -14,18 +14,22 @@ require'compe'.setup {
   max_menu_width = 100;
   documentation = false;
 
-  source = {
-    path = true;
-    buffer = true;
-    calc = true;
-    vsnip = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-    spell = true;
-    tags = true;
-    snippets_nvim = true;
-    treesitter = true;
-  };
+    source = {
+      path = { kind = "   (Path)" },
+      buffer = { kind = "   (Buffer)" },
+      calc = { kind = "   (Calc)" },
+      vsnip = { kind = "   (Snippet)" },
+      nvim_lsp = { kind = "   (LSP)" },
+      nvim_lua = false,
+      spell = { kind = "   (Spell)" },
+      tags = false,
+      vim_dadbod_completion = false,
+      snippets_nvim = false,
+      ultisnips = false,
+      treesitter = false,
+      emoji = { kind = " ﲃ  (Emoji)", filetypes = { "markdown", "text" } },
+      -- for emoji press : (idk if that in compe tho)
+    },
 }
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)

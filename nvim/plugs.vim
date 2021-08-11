@@ -27,9 +27,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'lilydjwg/colorizer'
 
 	"telescope things.."
-	Plug 'nvim-lua/popup.nvim'
-	Plug 'nvim-lua/plenary.nvim'
-	Plug 'nvim-telescope/telescope.nvim'
+	" Plug 'nvim-lua/popup.nvim'
+	" Plug 'nvim-lua/plenary.nvim'
+	" Plug 'nvim-telescope/telescope.nvim'
 
 	"lsp autocomplete" 
 	Plug 'ray-x/lsp_signature.nvim'
